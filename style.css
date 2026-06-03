@@ -1,1 +1,173 @@
-/* Add your CSS here */
+/* Page layout and typography */
+:root {
+  color-scheme: dark;
+  color: #0f172a;
+  background: #f5f8fb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  background: linear-gradient(180deg, #eef5fb 0%, #ffffff 75%);
+}
+
+.page-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+
+header {
+  padding: 32px 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  margin-bottom: 32px;
+}
+
+header > div {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+}
+
+header img {
+  width: 120px;
+  max-width: 100%;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+header p {
+  margin: 0;
+  color: #475569;
+  max-width: 720px;
+}
+
+section {
+  position: relative;
+  padding: 12px 0 24px;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+  transform: translateX(-50%);
+}
+
+section > div {
+  position: relative;
+  margin: 24px 0 24px 72px;
+  padding: 24px 24px 24px 28px;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+section > div::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  top: 32px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+section > div:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+}
+
+section h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+section h3 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  color: #1e293b;
+}
+
+section p {
+  margin: 0;
+  color: #475569;
+}
+
+footer,
+p {
+  text-align: center;
+  margin: 0;
+  padding-top: 16px;
+  color: #64748b;
+}
+
+p {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+@media (min-width: 720px) {
+  header {
+    padding: 40px 44px;
+  }
+
+  section > div {
+    margin-left: 84px;
+  }
+
+  section::before {
+    left: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-content {
+    padding: 24px 16px 32px;
+  }
+
+  section {
+    padding-left: 14px;
+  }
+
+  section > div {
+    margin-left: 56px;
+    padding: 20px 18px 20px 24px;
+  }
+
+  section::before {
+    left: 18px;
+  }
+
+  section > div::before {
+    left: -38px;
+  }
+}
+
